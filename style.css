@@ -1,0 +1,163 @@
+*{padding: 0;margin: 0;box-sizing: border-box;}
+
+:root{
+    --blueGray: #2A2634
+}
+
+body{
+    height: 100%;
+    background-size: 100% auto;
+    background-image: url(./assets/bg-2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 32px 0 40px 0;
+    margin: 0 auto;
+    width: 580px;
+}
+
+header div{
+    background: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    margin-bottom: 32px;
+}
+
+header img{
+    width: 125px;
+    height: 125px;
+    padding: 5px;
+}
+
+main img, main svg{
+    transition: 300ms;
+}
+
+main img:hover, main svg:hover{
+    transition: 300ms;
+    transform: scale(1.10);
+}
+
+section{
+    border-radius: 10px;
+    background: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    
+    width: 580px;
+    min-height: fit-content;
+    padding-top: 4px;
+}
+
+section .card{
+    background-color: var(--blueGray);
+    border-radius: 8px;
+    padding: 24px 32px 32px 32px;
+}
+
+section:nth-child(2){
+    margin: 24px 0;
+}
+
+section h2{
+    font-size: 24px;
+    letter-spacing: -0.47px;
+}
+
+section p{
+    margin-top: 8px;
+    margin-bottom: 24px;
+
+    font-size: 16px;
+    letter-spacing: -0.18px;
+    color: #A1A1AA;
+}
+
+section .card div:nth-child(2){
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+section .games img{
+    width: 90px;
+    height: 120px;
+    border-radius: 5px;
+}
+
+section .streamers img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+/* Animations */
+header div{
+    animation: fromTop .7s .2s backwards;
+}
+
+section{
+    animation: fromBottom .7s backwards;
+}
+
+section:nth-child(1){
+    animation-delay: 0;
+}
+
+section:nth-child(2){
+    animation-delay: .4s;
+}
+
+section:nth-child(3){
+    animation-delay: .8s;
+}
+
+@keyframes fromTop{
+    from{
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fromBottom{
+        from{
+            opacity: 0;
+            transform: translateY(30px);
+        }
+    
+        to{
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+/* Resposividade */
+@media (max-width: 600px) {
+    .container{
+        width: 0px;
+    }
+    section{
+        width: 95vw;
+    }
+}
+@media (max-width: 386px){
+    section .card div:nth-child(2){
+        justify-content: center;
+    }
+}
+
